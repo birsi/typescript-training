@@ -137,4 +137,6 @@ tsconfig.json ← strict compiler settings shared by all files
 
 Made for learning. **Fork it, train with it, share it.** 🚀
 
+Looking for the same course for Go? → [go-training](https://github.com/birsi/go-training)
+
 </div>
