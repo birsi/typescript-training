@@ -1,7 +1,7 @@
 export {};
 
 // ============================================================
-// Stage 2 — Exercise 4: Generics (basics)
+// Stage 2 — Exercise 7: Generics (basics)
 // ============================================================
 //
 // Generics let a function/type work with MANY types while still
@@ -11,10 +11,13 @@ export {};
 //   - No `any`, no `as`, no `!` non-null assertions.
 //   - No type-parameter "leakage": do NOT use `unknown` or `object`
 //     as a stand-in for a generic.
+//   - Check: npm run check -- exercises/stage2/07_generics.ts
+//
+// When you're done, ask Claude to review this exercise.
 // ============================================================
 
 
-// --- Task 4.1 — Identity -------------------------------------
+// --- Task 7.1 — Identity -------------------------------------
 // Write a generic function `identity<T>(value: T): T` that
 // returns exactly what it was given.
 //
@@ -24,7 +27,7 @@ export {};
 // TODO: your code here
 
 
-// --- Task 4.2 — First element of an array --------------------
+// --- Task 7.2 — First element of an array --------------------
 // Write `first<T>(arr: T[]): T | undefined` that returns the
 // first element, or `undefined` for an empty array.
 //
@@ -34,7 +37,7 @@ export {};
 // TODO: your code here
 
 
-// --- Task 4.3 — Generic constraint ---------------------------
+// --- Task 7.3 — Generic constraint ---------------------------
 // Write `longer<T extends { length: number }>(a: T, b: T): T`
 // that returns whichever argument has the greater `.length`
 // (ties → return `a`).
@@ -46,7 +49,7 @@ export {};
 // TODO: your code here
 
 
-// --- Task 4.4 — Indexing with keyof --------------------------
+// --- Task 7.4 — Indexing with keyof --------------------------
 // Write `getProp<T, K extends keyof T>(obj: T, key: K): T[K]`
 // that returns obj[key].
 //
