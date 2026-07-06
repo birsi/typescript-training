@@ -74,41 +74,45 @@ You can of course also do the training without Claude — solve the TODOs, run t
 
 The three stages mirror how TypeScript proficiency develops: first you **annotate** values, then you **design** types, then you **compute with** types. Each stage builds on the previous one.
 
+Each exercise comes with **official reading** — read it up front or in parallel, then let the compiler check your understanding. Nearly all links go to [typescriptlang.org](https://www.typescriptlang.org/) (the TypeScript project itself): the [Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) chapters, the [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html) reference, and release notes where a feature is documented nowhere else; exercise 12 adds [MDN](https://developer.mozilla.org/) for the JavaScript promise machinery underneath the types. Before Stage 1, skim [TypeScript for JavaScript Programmers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) once — everything below builds on it.
+
 ### 🌱 Stage 1 — Foundations: describing values you already have
 
 Telling the compiler what you already know from JavaScript — and learning to read what it says back. Ends with a preview of the course's big idea: types can be *derived* from values (`as const`), not just written by hand.
 
-| Exercise | Topics |
-|---|---|
-| [01_basics](exercises/stage1/01_basics.ts) | Primitives, arrays, object types, typed functions |
-| [02_functions](exercises/stage1/02_functions.ts) | Function type expressions, optional/default/rest params, `void`, `never` |
-| [03_unions_narrowing](exercises/stage1/03_unions_narrowing.ts) | Union types, literal types, narrowing with `typeof`/`switch` |
-| [04_tuples_enums_const](exercises/stage1/04_tuples_enums_const.ts) | Tuples, `readonly` arrays, enums, `as const`, deriving types from values |
+| Exercise | Topics | 📖 Official reading |
+|---|---|---|
+| [01_basics](exercises/stage1/01_basics.ts) | Primitives, arrays, object types, typed functions | Handbook: [The Basics](https://www.typescriptlang.org/docs/handbook/2/basic-types.html) & [Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) |
+| [02_functions](exercises/stage1/02_functions.ts) | Function type expressions, optional/default/rest params, `void`, `never` | Handbook: [More on Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html) — esp. [function type expressions](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-type-expressions), [`void`](https://www.typescriptlang.org/docs/handbook/2/functions.html#void) & [`never`](https://www.typescriptlang.org/docs/handbook/2/functions.html#never) |
+| [03_unions_narrowing](exercises/stage1/03_unions_narrowing.ts) | Union types, literal types, narrowing with `typeof`/`switch` | Everyday Types: [Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) & [Literal Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types) · Handbook: [Narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) |
+| [04_tuples_enums_const](exercises/stage1/04_tuples_enums_const.ts) | Tuples, `readonly` arrays, enums, `as const`, deriving types from values | Object Types: [Tuple Types](https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types) · Reference: [Enums](https://www.typescriptlang.org/docs/handbook/enums.html) · Release notes: [`const` assertions](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions) · Handbook: [Typeof Type Operator](https://www.typescriptlang.org/docs/handbook/2/typeof-types.html) |
 
 ### 🧩 Stage 2 — Modeling data: designing types for a domain
 
 The direction reverses: design the shapes first, let them constrain the code. Interfaces come before classes because `implements` needs contracts to exist; generics before discriminated unions because the stage's capstone — a generic `Result<T>` — combines both.
 
-| Exercise | Topics |
-|---|---|
-| [05_interfaces](exercises/stage2/05_interfaces.ts) | Interfaces, optional & `readonly` members, extension, index signatures |
-| [06_classes](exercises/stage2/06_classes.ts) | Access modifiers, getters, parameter properties, `implements`, abstract classes |
-| [07_generics](exercises/stage2/07_generics.ts) | Type parameters, constraints, `keyof`, indexed access `T[K]` |
-| [08_discriminated_unions](exercises/stage2/08_discriminated_unions.ts) | Tagged unions, exhaustive switches, `assertNever`, a generic `Result<T>` |
+| Exercise | Topics | 📖 Official reading |
+|---|---|---|
+| [05_interfaces](exercises/stage2/05_interfaces.ts) | Interfaces, optional & `readonly` members, extension, index signatures | Handbook: [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html) · Everyday Types: [interfaces vs type aliases](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces) |
+| [06_classes](exercises/stage2/06_classes.ts) | Access modifiers, getters, parameter properties, `implements`, abstract classes | Handbook: [Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html) — esp. [member visibility](https://www.typescriptlang.org/docs/handbook/2/classes.html#member-visibility), [parameter properties](https://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties) & [`implements`](https://www.typescriptlang.org/docs/handbook/2/classes.html#implements-clauses) |
+| [07_generics](exercises/stage2/07_generics.ts) | Type parameters, constraints, `keyof`, indexed access `T[K]` | Handbook: [Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html) (esp. [constraints](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints)) · [Keyof Type Operator](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html) · [Indexed Access Types](https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html) |
+| [08_discriminated_unions](exercises/stage2/08_discriminated_unions.ts) | Tagged unions, exhaustive switches, `assertNever`, a generic `Result<T>` | Narrowing: [Discriminated Unions](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#discriminated-unions), [the `never` type](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-never-type) & [Exhaustiveness checking](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#exhaustiveness-checking) |
 
 ### 🔮 Stage 3 — Type transformation & safety: computing with types
 
 Types become inputs and outputs themselves: first *use* the built-in utility types, then build your own with mapped and conditional types. The stage also covers the two places well-typed apps still go wrong — data crossing a boundary (10) and async code (12).
 
-| Exercise | Topics |
-|---|---|
-| [09_utility_types](exercises/stage3/09_utility_types.ts) | `Partial`, `Pick`, `Omit`, `Record`, building your own `Partial` |
-| [10_type_guards](exercises/stage3/10_type_guards.ts) | `unknown` vs `any`, type predicates (`x is T`), assertion functions |
-| [11_mapped_conditional](exercises/stage3/11_mapped_conditional.ts) | Mapped types, modifier `+/-`, conditional types, `infer`, template literals |
-| [12_async](exercises/stage3/12_async.ts) | `Promise<T>`, `async`/`await`, `Promise.all`, `Awaited`, async `Result` |
+| Exercise | Topics | 📖 Official reading |
+|---|---|---|
+| [09_utility_types](exercises/stage3/09_utility_types.ts) | `Partial`, `Pick`, `Omit`, `Record`, building your own `Partial` | Reference: [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html) · Handbook: [Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html) — how `Partial` & co. work under the hood |
+| [10_type_guards](exercises/stage3/10_type_guards.ts) | `unknown` vs `any`, type predicates (`x is T`), assertion functions | Narrowing: [Using type predicates](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates) · More on Functions: [`unknown`](https://www.typescriptlang.org/docs/handbook/2/functions.html#unknown) · Release notes: [assertion functions](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions) |
+| [11_mapped_conditional](exercises/stage3/11_mapped_conditional.ts) | Mapped types, modifier `+/-`, conditional types, `infer`, template literals | Handbook: [Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html) · [Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html) (incl. [`infer`](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types)) · [Template Literal Types](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html) |
+| [12_async](exercises/stage3/12_async.ts) | `Promise<T>`, `async`/`await`, `Promise.all`, `Awaited`, async `Result` | MDN: [Using promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) & [`async function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) · Reference: [`Awaited<Type>`](https://www.typescriptlang.org/docs/handbook/utility-types.html#awaitedtype) |
 
 > [!TIP]
 > Work through the exercises **in order** — concepts are deliberately reused: `never` (02) powers exhaustiveness checks (08), narrowing (03) becomes custom type guards (10), `keyof`/`T[K]` (07) returns in mapped types (09, 11), and `Result<T>` (08) comes back in async form (12).
+>
+> And don't try to read everything first: the Handbook chapters are short — skim the linked sections before an exercise; save the rest for when a compiler error makes you curious *why*.
 
 ## 📏 Ground rules
 
