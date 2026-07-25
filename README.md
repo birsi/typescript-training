@@ -135,6 +135,10 @@ CLAUDE.md     ← tutor instructions for Claude Code
 tsconfig.json ← strict compiler settings shared by all files
 ```
 
+## 🤝 Contributing
+
+Found a bug, an unclear task, or an idea for a new exercise? Suggestions are welcome — [open an issue](https://github.com/birsi/typescript-training/issues) or [start a discussion](https://github.com/birsi/typescript-training/discussions), and PRs are always welcome too.
+
 ---
 
 <div align="center">
